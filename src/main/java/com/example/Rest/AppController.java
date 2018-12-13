@@ -16,6 +16,9 @@ public class AppController {
 	
 	@GetMapping("/")
 	public String getMethod(){
-		return templateTest.call();
+		System.out.println("Call reached here");
+		String s = templateTest.call();
+		System.out.println("Call didn't miss that point");
+		return s;
 	}
 }
