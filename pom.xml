@@ -37,17 +37,35 @@
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 		<dependency>
+		    <groupId>org.springframework.cloud</groupId>
+		    <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+		    <version>2.0.1.RELEASE</version>
+		</dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-
+	
+	
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+			        <resources>
+			            <labels> 
+			              <all> 
+			                <property> 
+			                  <name>name</name>
+			                  <value>auto-discover</value>
+			                </property>
+			              </all>
+			            </labels>
+			        </resources>
+			    </configuration>
 			</plugin>
 		</plugins>
 	</build>
